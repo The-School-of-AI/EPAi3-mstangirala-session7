@@ -9,8 +9,7 @@ import re
 import time
 
 README_CONTENT_CHECK_FOR = [
-    'lexical scope',
-    'namespace',
+    'Nonlocal Scope',
     'Global scope',
     'Local scope'
 ]
@@ -120,11 +119,11 @@ def test_closure_my_fibonacci():
 
 
 def test_closure_check_doc_string_len():
-    f1 = session7.check_doc_string_len
+    f1 = session7.check_doc_string_len(session7.my_fibonacci)
     assert bool(f1.__closure__)==True, 'Closure is missing'  
 
 def test_closure_global_dictionary_variable_with_the_counts():
-    f1 = session7.global_dictionary_variable_with_the_counts()
+    f1 = session7.global_dictionary_variable_with_the_counts(fn)
     assert bool(f1.__closure__)==True, 'Closure is missing'
     
 def test_counter():
