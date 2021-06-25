@@ -123,6 +123,7 @@ def test_closure_check_doc_string_len():
     assert bool(f1.__closure__)==True, 'Closure is missing'  
 
 def test_closure_global_dictionary_variable_with_the_counts():
+    fn = session7.add
     f1 = session7.global_dictionary_variable_with_the_counts(fn)
     assert bool(f1.__closure__)==True, 'Closure is missing'
     
