@@ -10,8 +10,8 @@ import time
 
 README_CONTENT_CHECK_FOR = [
     'Nonlocal Scope',
-    'Global scope',
-    'Local scope'
+    'Global Scope',
+    'Local Scope'
 ]
 
 def test_readme_exists():
