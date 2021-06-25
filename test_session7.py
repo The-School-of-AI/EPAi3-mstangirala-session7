@@ -9,16 +9,10 @@ import re
 import time
 
 README_CONTENT_CHECK_FOR = [
-    'generate_my_next_number',
-    'min_count',
-    'docstring',
-    'fibonacci',
-    'called',
-    'closure',
-    'global',
-    'count',
-    'dictioanry',
-    'variable'
+    'lexical scope',
+    'namespace',
+    'global scope',
+    'local scope'
 ]
 
 def test_readme_exists():
@@ -51,12 +45,12 @@ def test_readme_file_for_formatting():
     f = open("README.md", "r")
     content = f.read()
     f.close()
-    assert content.count("#") >= 55, 'proper formatting of README is required'
+    assert content.count("#") >= 5, 'proper formatting of README is required'
 
 
-def test_session7_docstring_check():
+def test_session7_check_doc_string_len():
     #check more then 50 char
-    f1 = session7.check_doc_string_len(session7.myfibonacci)
+    f1 = session7.check_doc_string_len(session7.my_fibonacci)
     assert f1()==True, 'just do by character by character count'
    
     #less then 50
@@ -69,9 +63,9 @@ def test_my_doc_string_outer_not_empty():
 def test_my_doc_string_outer_exists():
     assert session7.check_doc_string_len.__doc__ is not None, "doc string can't be Type None"
 
-def test_myfibonacii():
+def test_my_fibonacci():
     my_list = [1,2,3,5,8,13]
-    f1 = session7.myfibonacci()
+    f1 = session7.my_fibonacci()
     for i in my_list:
         assert i==f1(),'functionality not working as expected'
 
@@ -102,11 +96,6 @@ def test_global_dictionary_variable_with_the_counts():
 
 def test_check_docs_check_doc_string_len():
     assert bool(session7.check_doc_string_len.__doc__)==True,"Docstring missing"
-    assert bool(session7.my_fibonacci.__doc__)==True,"Docstring missing"
-    assert bool(session7.add.__doc__)==True,"Docstring missing"
-    assert bool(session7.mult.__doc__)==True,"Docstring missing"
-    assert bool(session7.div.__doc__)==True,"Docstring missing"
-    assert bool(session7.global_dictionary_variable_with_the_counts.__doc__)==True,"Docstring missing"
 
 def test_check_docs_my_fibonacci():
     assert bool(session7.my_fibonacci.__doc__)==True,"Docstring missing"
